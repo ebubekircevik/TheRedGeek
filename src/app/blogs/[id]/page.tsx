@@ -3,9 +3,7 @@ import { getBlogPostById } from "@/lib/mockData";
 import { notFound } from "next/navigation";
 
 interface BlogDetailPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
