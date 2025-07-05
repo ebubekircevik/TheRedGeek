@@ -223,9 +223,9 @@ export default function RoadmapPage() {
               Development Roadmap
             </h1>
             <p className="text-xl text-red-100 max-w-3xl mx-auto">
-              Discover what's coming next for TheRedGeek. We're constantly
-              working to improve your experience with new features and
-              enhancements.
+              + Discover what&apos;s coming next for TheRedGeek. We&apos;re
+              constantly + working to improve your experience with new features
+              and enhancements. +{" "}
             </p>
           </div>
         </div>
@@ -242,9 +242,17 @@ export default function RoadmapPage() {
             {statusOrder.map(status => (
               <div key={status} className="flex items-center gap-2">
                 <span
-                  className={`px-3 py-1 rounded-full text-sm font-medium border ${getStatusColor(status)}`}
+                  className={`px-3 py-1 rounded-full text-sm font-medium border ${getStatusColor(status as "completed" | "in-progress" | "planned" | "upcoming")}`}
                 >
-                  {statusLabels[status]}
+                  {
+                    statusLabels[
+                      status as
+                        | "completed"
+                        | "in-progress"
+                        | "planned"
+                        | "upcoming"
+                    ]
+                  }
                 </span>
               </div>
             ))}
@@ -262,8 +270,12 @@ export default function RoadmapPage() {
                 key={status}
                 className="bg-white rounded-lg shadow-sm border border-red-200 overflow-hidden"
               >
-                <div className={`px-6 py-4 border-b ${getStatusColor(status)}`}>
-                  <h2 className="text-2xl font-bold">{statusLabels[status]}</h2>
+                <div
+                  className={`px-6 py-4 border-b ${getStatusColor(status as "completed" | "in-progress" | "planned" | "upcoming")}`}
+                >
+                  <h2 className="text-2xl font-bold">
+                    {statusLabels[status as keyof typeof statusLabels]}
+                  </h2>
                 </div>
                 <div className="p-6">
                   <div className="grid gap-6 md:grid-cols-2">
@@ -322,8 +334,9 @@ export default function RoadmapPage() {
         <div className="mt-12 bg-gradient-to-r from-red-600 to-red-700 rounded-lg shadow-lg p-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Have Suggestions?</h2>
           <p className="text-red-100 mb-6 max-w-2xl mx-auto">
-            We'd love to hear your ideas for new features or improvements. Your
-            feedback helps us prioritize what matters most to our community.
+            We&apos;d love to hear your ideas for new features or improvements.
+            Your feedback helps us prioritize what matters most to our
+            community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
