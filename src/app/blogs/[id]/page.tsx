@@ -8,8 +8,9 @@ interface BlogDetailPageProps {
   };
 }
 
-export default function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const blog = getBlogPostById(params.id);
+export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
+  const { id } = await params;
+  const blog = getBlogPostById(id);
 
   if (!blog) {
     notFound();
