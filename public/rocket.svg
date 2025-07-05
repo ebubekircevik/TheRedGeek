@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+  <!-- Main rocket body -->
+  <ellipse cx="36" cy="36" rx="18" ry="34" fill="#d0cfce" stroke="#000" stroke-width="3" transform="rotate(-20 36 36)"/>
+  <!-- Nose cone -->
+  <path d="M36 7 Q48 22 36 27 Q24 22 36 7" fill="#ea5a47" stroke="#000" stroke-width="3"/>
+  <!-- Left fin -->
+  <path d="M18 54 Q6 60 18 36 Q24 44 18 54 Z" fill="#ea5a47" stroke="#000" stroke-width="3"/>
+  <!-- Right fin -->
+  <path d="M54 54 Q66 60 54 36 Q48 44 54 54 Z" fill="#ea5a47" stroke="#000" stroke-width="3"/>
+  <!-- Window -->
+  <circle cx="44" cy="28" r="7" fill="#92d3f5" stroke="#000" stroke-width="3"/>
+  <!-- Flame -->
+  <path d="M30 65 Q36 60 42 65 Q39 58 36 49 Q33 58 30 65" fill="#fcea2b" stroke="#f1b31c" stroke-width="2"/>
+  <!-- Details: window highlight -->
+  <ellipse cx="46" cy="26" rx="2" ry="3" fill="#fff" opacity="0.7"/>
+</svg> 

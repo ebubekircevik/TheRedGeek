@@ -1,0 +1,28 @@
+<svg 
+  width="32" 
+  height="32" 
+  viewBox="0 0 40 40" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  {/* Gray background circle - fixed position */}
+  <circle cx="20" cy="20" r="19" fill="#f3f4f6" />
+  {/* Left temple - moved up */}
+  <rect x="4" y="16" width="4" height="8" rx="1" fill="#dc2626" />
+  {/* Right temple - moved up */}
+  <rect x="32" y="16" width="4" height="8" rx="1" fill="#dc2626" />
+  {/* Left lens frame - moved up */}
+  <rect x="8" y="12" width="10" height="12" rx="2" fill="#fff" stroke="#dc2626" strokeWidth="2" />
+  {/* Right lens frame - moved up */}
+  <rect x="22" y="12" width="10" height="12" rx="2" fill="#fff" stroke="#dc2626" strokeWidth="2" />
+  {/* Bridge - moved up */}
+  <rect x="18" y="16" width="4" height="4" rx="1" fill="#dc2626" />
+  {/* Pixel effect in left lens - moved up */}
+  <rect x="11" y="15" width="2" height="2" fill="#dc2626" />
+  <rect x="13" y="18" width="1.5" height="1.5" fill="#dc2626" />
+  {/* Pixel effect in right lens - moved up */}
+  <rect x="25" y="15" width="2" height="2" fill="#dc2626" />
+  <rect x="27" y="18" width="1.5" height="1.5" fill="#dc2626" />
+  {/* Mustache/Shadow - moved up */}
+  <ellipse cx="20" cy="31" rx="12" ry="2" fill="#dc2626" />
+</svg> 

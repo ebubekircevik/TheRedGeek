@@ -1,0 +1,27 @@
+{
+  "name": "TheRedGeek - Tech Blog",
+  "short_name": "TheRedGeek",
+  "description": "Technology, Programming & Innovation Blog",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#dc2626",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "education", "news"],
+  "lang": "en",
+  "dir": "ltr"
+}
