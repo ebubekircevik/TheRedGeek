@@ -1,9 +1,5 @@
 import Link from "next/link";
-import { BlogPost } from "@/lib/mockData";
-
-interface FeaturedBlogCardProps {
-  blog: BlogPost;
-}
+import { FeaturedBlogCardProps } from "@/types/blog";
 
 export default function FeaturedBlogCard({ blog }: FeaturedBlogCardProps) {
   return (

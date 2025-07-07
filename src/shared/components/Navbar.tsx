@@ -39,8 +39,8 @@ export default function Navbar() {
             href={link.href}
             className="text-white hover:text-red-100 font-medium transition-colors flex items-center gap-2"
           >
-            {link.icon}
             {link.label}
+            {link.icon}
           </Link>
         ))}
       </div>
@@ -52,13 +52,13 @@ export default function Navbar() {
       >
         <span
           className={`block w-7 h-0.5 bg-white transition-all ${open ? "rotate-45 translate-y-2" : ""}`}
-        ></span>
+        />
         <span
           className={`block w-7 h-0.5 bg-white transition-all ${open ? "opacity-0" : ""}`}
-        ></span>
+        />
         <span
           className={`block w-7 h-0.5 bg-white transition-all ${open ? "-rotate-45 -translate-y-2" : ""}`}
-        ></span>
+        />
       </button>
       {/* Mobile menu */}
       {open && (
@@ -70,8 +70,8 @@ export default function Navbar() {
               className="px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-700 font-medium transition-colors flex items-center gap-2"
               onClick={() => setOpen(false)}
             >
-              {link.icon}
               {link.label}
+              {link.icon}
             </Link>
           ))}
         </div>

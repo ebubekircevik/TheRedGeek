@@ -1,15 +1,5 @@
-export interface BlogPost {
-  id: string;
-  title: string;
-  content: string;
-  excerpt: string;
-  author: string;
-  publishedAt: string;
-  category: string;
-  tags: string[];
-  readTime: number;
-  imageUrl?: string;
-}
+import { BlogPost } from "@/types/blog";
+
 
 export const mockBlogPosts: BlogPost[] = [
   {
