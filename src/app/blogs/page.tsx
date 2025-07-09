@@ -1,11 +1,10 @@
-import { getAllBlogPosts } from "@/lib/mockData";
+import { getAllBlogPosts } from "@/lib/api/blogApi";
 import BlogCard from "@/shared/components/BlogCard";
 import FeaturedBlogCard from "@/shared/components/FeaturedBlogCard";
 import NewsletterSignup from "@/shared/components/NewsletterSignup";
 
-export default function BlogsPage() {
-  const blogs = getAllBlogPosts();
-
+export default async function BlogsPage() {
+  const blogs = await getAllBlogPosts();
   return (
     <main className="max-w-6xl mx-auto py-12 px-4">
       <div className="text-center mb-12">
@@ -28,7 +27,7 @@ export default function BlogsPage() {
       {/* All Blogs Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogs.slice(1).map(blog => (
-          <BlogCard key={blog.id} blog={blog} />
+          <BlogCard key={blog._id} blog={blog} />
         ))}
       </div>
 
