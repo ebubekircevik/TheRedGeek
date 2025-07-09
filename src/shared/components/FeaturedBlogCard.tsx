@@ -33,7 +33,7 @@ export default function FeaturedBlogCard({ blog }: FeaturedBlogCardProps) {
             </div>
           </div>
           <Link
-            href={`/blogs/${blog.id}`}
+            href={`/blogs/${blog._id}`}
             className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors"
           >
             Read More

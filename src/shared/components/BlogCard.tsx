@@ -42,7 +42,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
           </div>
 
           <Link
-            href={`/blogs/${blog.id}`}
+            href={`/blogs/${blog._id}`}
             className="text-red-600 hover:text-red-700 font-medium text-sm transition-colors"
           >
             Read More →

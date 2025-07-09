@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getBlogPostById } from "@/lib/mockData";
+import { getBlogPostById, getBlogPostsByCategory } from "@/lib/api/blogApi";
 import { notFound } from "next/navigation";
 
 interface BlogDetailPageProps {
@@ -8,7 +8,11 @@ interface BlogDetailPageProps {
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { id } = await params;
-  const blog = getBlogPostById(id);
+  const blog = await getBlogPostById(id);
+  const relatedBlogsResponse = await getBlogPostsByCategory(blog.category);
+  const relatedBlogs = relatedBlogsResponse.filter(
+    item => item._id !== blog._id
+  );
 
   if (!blog) {
     notFound();
@@ -157,43 +161,32 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       </article>
 
       {/* Related Posts */}
-      <section className="mt-16">
-        <h2 className="text-2xl font-bold mb-8 text-gray-900">
-          Benzer Yazılar
-        </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* You can add related posts logic here */}
-          <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-semibold mb-2 text-gray-900">
-              React Hooks ile State Yönetimi
-            </h3>
-            <p className="text-gray-600 mb-4">
-              React Hooks kullanarak state yönetimini nasıl yapacağınızı
-              öğrenin...
-            </p>
-            <Link
-              href="#"
-              className="text-red-600 hover:text-red-700 font-medium"
-            >
-              Devamını Oku →
-            </Link>
+      {relatedBlogs.length > 0 && (
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold mb-8 text-gray-900">
+            Related Blogs
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {relatedBlogs.map(item => (
+              <div
+                key={item._id}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 mb-4">{item.excerpt}</p>
+                <Link
+                  href={`/blogs/${item._id}`}
+                  className="text-red-600 hover:text-red-700 font-medium"
+                >
+                  Devamını Oku →
+                </Link>
+              </div>
+            ))}
           </div>
-          <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-semibold mb-2 text-gray-900">
-              MongoDB ile Veritabanı Tasarımı
-            </h3>
-            <p className="text-gray-600 mb-4">
-              MongoDB kullanarak etkili veritabanı tasarımı yapmanın yolları...
-            </p>
-            <Link
-              href="#"
-              className="text-red-600 hover:text-red-700 font-medium"
-            >
-              Devamını Oku →
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Newsletter Signup */}
       <div className="mt-16 bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-8 text-white text-center">
